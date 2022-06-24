@@ -19,7 +19,6 @@ struct
 	char telefono[NUMERO];
 }typedef Censista;
 
-//FUNCIONES
 
 /**
  * @fn int initcensista(Censista*)
@@ -60,6 +59,7 @@ int listadoCensista(Censista* list, int indices);
  * @return retorna (-1) si es error [tamaño incorrecto o puntero NULL] - (0) si salio todo bien.
  */
 int buscarCensista(Censista* list, int tam,int legajo);
+
 
 
 #endif /* CENSISTAS_H_ */

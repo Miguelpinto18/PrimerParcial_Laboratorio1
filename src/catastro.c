@@ -96,3 +96,5 @@ int printCatastro(Catastro* lista, int len)
 	return retorno;
 }
 
+
+

@@ -27,6 +27,7 @@ int main(void)
 	int id;
 	int subMenu;
 
+
 	Vivienda casas[CANTIDAD];
 	Censista sensadores[CENSISTAS];
 	Catastro catastro[]={{1000, "Avellaneda", 28, 1540}, {1001, "Lanus", 43, 1789}, {1002, "Quilmes", 32, 1624}, {1003, "La Plata", 67, 1677},{1004, "Lomas de Zamora", 32, 1923}};
@@ -105,14 +106,7 @@ int main(void)
 				break;
 
 				case 5:
-					if(validacion!=0)
-					{
-						censistaPorVivienda(casas,CANTIDAD,sensadores, CENSISTAS);
-					}
-					else
-					{
-						printf("\nNo hay viviendas ingresadas, por favor ingrese una vivienda antes.\n");
-					}
+					listadoCensistas(sensadores,CENSISTAS);
 				break;
 
 				case 6:
@@ -121,7 +115,9 @@ int main(void)
 				break;
 
 				case 7:
-					getValidacionMaximoMinimo(&subMenu,"\nIngrese un numero: \n"
+					if(validacion!=0)
+					{
+						getValidacionMaximoMinimo(&subMenu,"\nIngrese un numero: \n"
 								" 1. Elija un tipo de vivienda\n"
 								" 2. Elija una localidad\n"
 								" 3. Cantidad de viviendas censadas\n"
@@ -130,28 +126,43 @@ int main(void)
 								" 6. Cantidad de viviendas de tipo “departamento” de la localidad de Lanús\n"
 								" 7. Salir ", "\nERROR, Reingrese un numero valido\n", 1,7);
 
-					switch(subMenu)
-					{
-						case 1:
-							tipoVivienda(casas, CANTIDAD);
-						break;
+						switch(subMenu)
+						{
+							case 1:
+								tipoVivienda(casas, CANTIDAD);
+							break;
 
-						case 2:
+							case 2:
+								mostrarLocalidad(casas, CANTIDAD);
+							break;
 
-						break;
+							case 3:
+								cantidadViviendasAvellaneda(casas, CANTIDAD);
+							break;
 
-						case 5:
+							case 4:
+								viviendasCensadas(casas, CANTIDAD);
+							break;
 
-						break;
+							case 5:
+								cantidadViviendas(casas, CANTIDAD);
+							break;
 
+							case 6:
+								cantidadViviendasLanus(casas, CANTIDAD);
+							break;
 
-
+						}
 					}
 
+					else
+					{
+						printf("\nNo hay viviendas ingresadas, por favor ingrese una vivienda antes.\n");
+					}
 
-			}
+				}
 
-	}while(respuesta!=11);
+	}while(respuesta!=8);
 
 	return 0;
 }

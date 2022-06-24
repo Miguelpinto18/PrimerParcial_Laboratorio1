@@ -16,7 +16,7 @@ struct
 	int idVivienda;
 	char calle[NOMBRE];
 	Censista legajoCensista;
-	//Catastro idCatastro;
+	int idCatastro;
 	int cantidadPersonas;
 	int cantidadHabitaciones;
 	int tipoVivienda;
@@ -130,11 +130,21 @@ int ordenamientoViviendas(Vivienda* list, int tam);
  * @return retorna (-1) si es error [tamaño incorrecto o puntero NULL] - (0) si salio todo bien.
  */
 int mostrarViviendas(Vivienda* list, int tam);
-//int listadoVivienda(Vivienda list, int tam);
 
 int tipoVivienda(Vivienda* list, int tam);
 
 void mostrarVivienda(Vivienda vivienda);
+
+int mostrarLocalidad(Vivienda* list, int tam);
+
+int cantidadViviendasAvellaneda(Vivienda* list, int tam);
+
+int cantidadViviendas(Vivienda* list, int tam);
+
+int viviendasCensadas(Vivienda* list, int tam);
+
+int cantidadViviendasLanus(Vivienda* list, int tam);
+
 
 /**
  * @fn int contadorViviendasRegistradas(Vivienda*, int)

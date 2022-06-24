@@ -8,7 +8,6 @@
 #ifndef SRC_CATASTRO_H_
 #define SRC_CATASTRO_H_
 
-#include "vivienda.h"
 
 struct
 {
